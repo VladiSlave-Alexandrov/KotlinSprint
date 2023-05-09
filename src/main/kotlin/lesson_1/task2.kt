@@ -12,5 +12,4 @@ fun main() {
 
     numberStaff = 1999
     println(numberStaff)
-
 }
