@@ -1,13 +1,12 @@
 package lesson2
 
 import kotlin.math.pow
-import kotlin.math.roundToInt
 
 fun main(){
     val deadLine = 20
     val deposit = 70000
-    val interestRate = 0.167
+    val interestRate = 16.7
 
-    val finalPayment = ((deposit * ((1 + interestRate).pow(deadLine))) * 1000.0).roundToInt() / 1000.0
-    println(finalPayment)
+    val finalPayment = (deposit * ((1 + interestRate / 100).pow(deadLine)))
+    println(String.format("%.3f", finalPayment) )
 }
