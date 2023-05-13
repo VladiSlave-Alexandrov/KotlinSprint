@@ -3,9 +3,15 @@ package lesson_3
 fun main(){
     val move = "D2-D4;0"
 
-    val startMove = move[0].toString() + move[1].toString()
-    val finalMove = move[3].toString() + move[4].toString()
-    val numberMove = move[6].toString()
+    var splitter = ";"
+    val splitString = move.split(splitter)
+    val numberMove = splitString[1]
+
+    splitter = "-"
+    val splitMove = splitString[0].split(splitter)
+    val startMove = splitMove[0]
+    val finalMove = splitMove[1]
+
 
     println(startMove)
     println(finalMove)
