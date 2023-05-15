@@ -2,7 +2,7 @@ package lesson_4
 
 fun main(){
     val trainingDay = 5
-    var exercise = trainingDay % 2 == 1
+    val exercise = trainingDay % 2 == 1
     val hands = exercise
     val abs = exercise
     val legs = !exercise
