@@ -12,4 +12,6 @@ fun main() {
     if ((number1 == winNumber1) && (number2 == winNumber2)) {println("Поздравляем! Вы выиграли главный приз!")}
     else if((number1 != winNumber1) && (number2 != winNumber2)) {println("Неудача! Крутите барабан!")}
     else {println("Вы выиграли утешительный приз!")}
+
+    println("Числа для победы: $winNumber1, $winNumber2")
 }
