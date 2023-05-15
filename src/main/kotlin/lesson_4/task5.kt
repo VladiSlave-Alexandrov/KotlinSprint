@@ -5,14 +5,14 @@ fun main(){
     val damages: Boolean? = readlnOrNull()?.toBoolean()
 
     print("Введите численность экипажа: ")
-    val crewNumber: Int? = readlnOrNull()?.toInt()
+    val crewNumber = readln().toInt()
 
     print("Введите текущее количество ящиков провизии: ")
-    val provisions: Int? = readlnOrNull()?.toInt()
+    val provisions = readln().toInt()
 
     print("Погодные условия(true - благоприятные, false - неблагоприятные): ")
     val weather: Boolean? = readlnOrNull()?.toBoolean()
 
-    val shippingOption = ((damages == false)&&(crewNumber!! in 55..69)&&(provisions!! > 50))||((damages == true)&&(crewNumber!! == 70)&&(provisions!! > 50)&&(weather == true))
+    val shippingOption = ((damages == false)&&(crewNumber in 55..69)&&(provisions > 50))||((damages == true)&&(crewNumber == 70)&&(provisions > 50)&&(weather == true))
     println(shippingOption)
 }
