@@ -1,9 +1,11 @@
 package lesson_5
 
 fun main(){
-    print("Докажите что вы не робот, решив задачу: 2 + 2 = ")
-    val answer = readlnOrNull()
+    val number1 = 15
+    val number2 = 13
+    print("Докажите что вы не робот, решив задачу: $number1 + $number2 = ")
+    val answer = readln().toInt()
 
-    if(answer == "4") println("Добро пожаловать")
+    if(answer == number1 + number2) println("Добро пожаловать")
     else println("Доступ запрещен")
 }
