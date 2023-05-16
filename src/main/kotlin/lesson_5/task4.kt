@@ -14,7 +14,7 @@ fun main() {
         if (console == password) {
             println("Авторизация прошла успешно")
         } else {
-            println(message = "Ошибка авторизации")
+            println("Ошибка авторизации")
         }
     }
 }
