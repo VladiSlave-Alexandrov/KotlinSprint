@@ -1,24 +1,27 @@
 package lesson_6
 
-fun main(){
+fun main() {
     print("Создайте логин: ")
     val login = readln()
 
+
     print("Создайте пароль: ")
     val password = readln()
+    println("Регистрация прошла успешно")
 
-    var flag = true
-    while(flag){
+    print("Введите логин: ")
+    var inputLogin = readln()
+
+    print("Введите пароль: ")
+    var inputPassword = readln()
+
+    while ((inputLogin != login) || (inputPassword != password)) {
+        println("Неверный логин или пароль.")
         print("Введите логин: ")
-        val inputLogin = readln()
+        inputLogin = readln()
 
         print("Введите пароль: ")
-        val inputPassword = readln()
-
-        if((inputLogin != login) ||(inputPassword != password)) println("Неверный логин или пароль.")
-        else{
-            print("Авторизация прошла успешно")
-            flag = false
-        }
+        inputPassword = readln()
     }
+    print("Авторизация прошла успешно")
 }
