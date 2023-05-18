@@ -6,7 +6,7 @@ fun main() {
     val numbers = '0'..'9'
     val characterSet = lowercaseLetters + uppercaseLetters + numbers
 
-    print("Введите количество символов в пароле: ")
+    print("Введите количество символов в парое: ")
     val numberCharacter = readln().toInt()
 
     for (i in 1..numberCharacter) {
