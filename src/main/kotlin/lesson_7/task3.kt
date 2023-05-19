@@ -5,6 +5,7 @@ fun main() {
     val finiteNumber = readln().toInt()
 
     for (i in 0..finiteNumber step 1) {
-        print("$i ")
+        if (i % 2 == 0) print("$i, ")
+        else continue
     }
 }
