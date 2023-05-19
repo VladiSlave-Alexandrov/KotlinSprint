@@ -8,9 +8,11 @@ fun main() {
 
     print("Введите количество символов в пароле: ")
     val numberCharacter = readln().toInt()
+    var password: String = ""
 
     for (i in 1..numberCharacter) {
-        print((characterSet).random())
+        password += (characterSet).random()
     }
+    println(password)
 
 }
