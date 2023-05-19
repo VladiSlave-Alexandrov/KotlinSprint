@@ -15,11 +15,10 @@ fun main() {
 
     val shippingOption = ((damages == false) && (crewNumber in MIN_CREW until MAX_CREW) &&
             (provisions > MIN_PROVISIONS)) || ((damages == true) && (crewNumber == MAX_CREW) &&
-            (provisions > ALLOWABLE_AMOUNT_OF_PROVISIONS) && (weather == true))
+            (provisions > MIN_PROVISIONS) && (weather == true))
     println(shippingOption)
 }
 
-const val ALLOWABLE_AMOUNT_OF_PROVISIONS = 50
 const val MIN_CREW = 55
 const val MAX_CREW = 70
 const val MIN_PROVISIONS = 50
