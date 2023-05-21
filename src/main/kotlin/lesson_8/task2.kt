@@ -4,8 +4,15 @@ fun main() {
     val pilafRecipe = arrayOf("Баранина", "Морковь", "Рис", "Лук", "Чеснок", "Зира", "Соль", "Перец")
 
     print("Введите искомый ингредиент(С заглавной буквы): ")
-    val ingredient = readln()
+    val ingredient = readln().capitalize()
 
-    if (pilafRecipe.contains(ingredient)) println("Ингредиент $ingredient в рецепте есть")
-    else println("Такого ингредиента в рецепте нет")
+    var flag = false
+    for (i in pilafRecipe.indices) {
+        if (ingredient == pilafRecipe[i]) {
+            println("Ингредиент $ingredient в рецепте есть")
+            flag = true
+            break
+        } else continue
+    }
+    if (!flag) println("Такого ингредиента в рецепте нет")
 }
