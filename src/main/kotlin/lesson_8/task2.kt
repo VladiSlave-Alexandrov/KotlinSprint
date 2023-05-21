@@ -3,7 +3,7 @@ package lesson_8
 fun main() {
     val pilafRecipe = arrayOf("Баранина", "Морковь", "Рис", "Лук", "Чеснок", "Зира", "Соль", "Перец")
 
-    print("Введите искомый ингредиент(С заглавной буквы): ")
+    print("Введите искомый ингредиент: ")
     val ingredient = readln().capitalize()
 
     var flag = false
