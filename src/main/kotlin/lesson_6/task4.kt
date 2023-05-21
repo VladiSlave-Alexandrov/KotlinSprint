@@ -11,7 +11,7 @@ fun main() {
         counter--
         if (consoleNumber == mysteryNumber) {
             println("Это была великолепная игра!")
-            counter = 0
+            break
         } else if (counter != 0) {
             println("Неверно, оставшееся количество попыток($counter)")
         } else {
