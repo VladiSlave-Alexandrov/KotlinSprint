@@ -4,7 +4,7 @@ fun main() {
     val pilafRecipe = arrayOf("Баранина", "Морковь", "Рис", "Лук", "Чеснок", "Зира", "Соль", "Перец")
 
     print("Введите искомый ингредиент: ")
-    val ingredient = readln().capitalize()
+    val ingredient = readln().replaceFirstChar { it.uppercase() }
 
     var flag = false
     for (i in pilafRecipe.indices) {
