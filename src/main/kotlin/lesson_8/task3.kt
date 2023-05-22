@@ -4,8 +4,11 @@ fun main() {
     val pilafRecipe = arrayOf("Баранина", "Морковь", "Рис", "Лук", "Чеснок", "Зира", "Соль", "Перец")
 
     print("Введите искомый ингредиент: ")
-    val ingredient = readln().capitalize()
+    val ingredient = readln().replaceFirstChar { it.uppercase() }
 
-    if (pilafRecipe.contains(ingredient)) println("Ингредиент $ingredient в рецепте есть")
-    else println("Такого ингредиента в рецепте нет")
+    if (ingredient in pilafRecipe) {
+        println("Ингредиент $ingredient в рецепте есть")
+    } else {
+        println("Такого ингредиента в рецепте нет")
+    }
 }
