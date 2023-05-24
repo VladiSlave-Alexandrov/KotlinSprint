@@ -9,16 +9,13 @@ fun main() {
     println()
 
     print("Введите ингредиент который хотите заменить: ")
-    var ingredient = readln().capitalize()
+    val ingredient = readln().replaceFirstChar { it.uppercase() }
 
     if (!pilafRecipe.contains(ingredient)) println("Ингредиент $ingredient в рецепте отсутствует")
     else print("Введите ингредиент для добавленя его в список: ")
 
-    val replacementIngredient = readln().capitalize()
-    for (i in pilafRecipe.indices) {
-        if (pilafRecipe[i] == ingredient) pilafRecipe[i] = replacementIngredient
-        else continue
-    }
+    val replacementIngredient = readln().replaceFirstChar { it.uppercase() }
+    pilafRecipe[pilafRecipe.indexOf(ingredient)] = replacementIngredient
 
     print("Готово! Вы сохранили следующий список: ")
     for (i in pilafRecipe) {
