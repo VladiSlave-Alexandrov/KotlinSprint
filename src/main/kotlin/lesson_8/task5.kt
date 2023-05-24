@@ -4,11 +4,9 @@ fun main() {
     print("Введите количество ингредиентов в рецепте: ")
     val ingredientsNumbers = readln().toInt()
 
-    val recipe = Array(ingredientsNumbers, { "" })
-    for (i in recipe.indices) {
-        print("Введите ингредиент [${i + 1}]: ")
-        val consoleIngredient = readln()
-        recipe[i] = consoleIngredient.capitalize()
+    val recipe = Array(ingredientsNumbers) {
+        print("Введите ингредиент : ")
+        readln().replaceFirstChar { it.uppercase() }
     }
 
     println("Готово, ваш рецепт: ")
