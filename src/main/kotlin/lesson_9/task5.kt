@@ -12,4 +12,5 @@ fun main() {
         sortedListIngredient.last() + "."
 
     println(sortedListIngredient.joinToString())
+    println("${sortedListIngredient.joinToString()}.")
 }
