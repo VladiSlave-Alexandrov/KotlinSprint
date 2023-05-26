@@ -1,7 +1,5 @@
 package lesson_9
 
-import kotlin.system.exitProcess
-
 fun main() {
     val wokRecipe = mutableListOf("Лапша", "Масло", "Соус")
     println("В рецепте есть базовые ингредиенты: $wokRecipe")
@@ -10,7 +8,7 @@ fun main() {
     val response = readln().replaceFirstChar { it.uppercase() }
 
     if (response == "Да") println("Какой ингредиент вы хотите добавить?")
-    else exitProcess(0)
+    else return
 
     val newIngredient = readln().replaceFirstChar { it.uppercase() }
     wokRecipe.add(newIngredient)
