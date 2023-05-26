@@ -6,32 +6,29 @@ fun main() {
     val password = passwordGenerator()
     println("Ваш пароль - $password")
 
-    conditionsOfRegistration(login, password)
-
-    userAuthorization(login, password)
+    if (conditionsOfRegistration(login, password)) userAuthorization(login, password)
+    else return
 }
 
 fun passwordGenerator(): String {
     print("Введите количество символов в генерируемом пароле: ")
     val passwordNumbers = readln().toInt()
-
-    val listOfNumbers = ("0123456789").split("").toMutableList()
-    val lostOfCharacters = ("!\"#\$%&'()*+,-./ ").split("")
-    listOfNumbers.addAll(lostOfCharacters)
+    val allOfCharacters = (("0123456789").split("") + ("!\"#$%&'()*+-,./ ").split("")).toMutableList()
+    allOfCharacters.removeAll(setOf(""))
     var password = ""
-
-    for (i in 0 until passwordNumbers) {
-        password += (listOfNumbers).random()
+    for (i in 1..passwordNumbers) {
+        password += (allOfCharacters).random()
     }
     return password
 }
 
-fun conditionsOfRegistration(login: String, password: String) {
+fun conditionsOfRegistration(login: String, password: String): Boolean {
     if ((login.count() >= MIN_CHARACTER_FOR_REGISTRATION) && (password.count() >= MIN_CHARACTER_FOR_REGISTRATION)) {
         println("Регистрация прошла успешно")
+        return true
     } else {
         println("Логин или пароль недостаточно длинные")
-        return
+        return false
     }
 }
 
