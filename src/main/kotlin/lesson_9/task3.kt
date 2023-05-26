@@ -6,6 +6,6 @@ fun main() {
     print("Введите желаемое количество порций: ")
     val portionNumbers = readln().toInt()
 
-    omeletRecipe.mapIndexed { i, it -> omeletRecipe[i] = it * portionNumbers }
-    println("На $portionNumbers порций вам понадобится: Яиц - ${omeletRecipe[0]}, Молока - ${omeletRecipe[1]}, Сливочного масла - ${omeletRecipe[2]}")
+    val ingredientNumbers = omeletRecipe.map { it * portionNumbers }
+    println("На $portionNumbers порций вам понадобится: Яиц - ${ingredientNumbers[0]}, Молока - ${ingredientNumbers[1]}, Сливочного масла - ${ingredientNumbers[2]}")
 }
