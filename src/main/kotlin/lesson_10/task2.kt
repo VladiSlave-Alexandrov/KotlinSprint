@@ -7,14 +7,14 @@ fun main() {
     print("Придумайте пароль: ")
     val password = readln()
 
-    conditionsOfRegistration(login, password)
+    println(verifyRegistration(login, password))
 }
 
-fun conditionsOfRegistration(login: String, password: String) {
-    if ((login.count() >= MIN_CHARACTER_FOR_REGISTRATION) && (password.count() >= MIN_CHARACTER_FOR_REGISTRATION)) {
-        println("Регистрация прошла успешно")
+fun verifyRegistration(login: String, password: String): String {
+    return if ((login.count() >= MIN_CHARACTER_FOR_REGISTRATION) && (password.count() >= MIN_CHARACTER_FOR_REGISTRATION)) {
+        "Регистрация прошла успешно"
     } else {
-        println("Логин или пароль недостаточно длинные")
+        "Логин или пароль недостаточно длинные"
     }
 }
 
