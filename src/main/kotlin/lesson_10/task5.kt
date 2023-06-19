@@ -3,18 +3,17 @@ package lesson_10
 fun main() {
     print("Придумайте логин: ")
     val login = readln()
-    val password = passwordGenerator()
+    val password = generatePassword()
     println("Ваш пароль - $password")
 
-    if (conditionsOfRegistration(login, password)) userAuthorization(login, password)
+    if (checkLengthData(login, password)) logIn(login, password)
     else return
 }
 
-fun passwordGenerator(): String {
+fun generatePassword(): String {
     print("Введите количество символов в генерируемом пароле: ")
     val passwordNumbers = readln().toInt()
-    val allOfCharacters = (("0123456789").split("") + ("!\"#$%&'()*+-,./ ").split("")).toMutableList()
-    allOfCharacters.removeAll(setOf(""))
+    val allOfCharacters = ' '..'9'
     var password = ""
     for (i in 1..passwordNumbers) {
         password += (allOfCharacters).random()
@@ -22,7 +21,7 @@ fun passwordGenerator(): String {
     return password
 }
 
-fun conditionsOfRegistration(login: String, password: String): Boolean {
+fun checkLengthData(login: String, password: String): Boolean {
     if ((login.count() >= MIN_CHARACTER_FOR_REGISTRATION) && (password.count() >= MIN_CHARACTER_FOR_REGISTRATION)) {
         println("Регистрация прошла успешно")
         return true
@@ -32,7 +31,7 @@ fun conditionsOfRegistration(login: String, password: String): Boolean {
     }
 }
 
-fun userAuthorization(login: String, password: String) {
+fun logIn(login: String, password: String) {
     var flag = true
     while (flag) {
         print("Введите логин: ")
