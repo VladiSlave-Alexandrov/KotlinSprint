@@ -4,11 +4,11 @@ fun main() {
     print("Введите количество символов в пароле: ")
     val passwordNumbers = readln().toInt()
 
-    println(passwordGeneration(passwordNumbers))
+    println(generatePassword(passwordNumbers))
 
 }
 
-fun passwordGeneration(passwordNumbers: Int): String {
+fun generatePassword(passwordNumbers: Int): String {
     val allOfCharacters = ' '..'9'
     var password = ""
     for (i in 1..passwordNumbers) {
