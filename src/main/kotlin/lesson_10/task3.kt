@@ -4,13 +4,12 @@ fun main() {
     print("Введите количество символов в пароле: ")
     val passwordNumbers = readln().toInt()
 
-    println(passwordGenerator(passwordNumbers))
+    println(passwordGeneration(passwordNumbers))
 
 }
 
-fun passwordGenerator(passwordNumbers: Int): String {
-    val allOfCharacters = (("0123456789").split("") + ("!\"#$%&'()*+-,./ ").split("")).toMutableList()
-    allOfCharacters.removeAll(setOf(""))
+fun passwordGeneration(passwordNumbers: Int): String {
+    val allOfCharacters = ' '..'9'
     var password = ""
     for (i in 1..passwordNumbers) {
         password += (allOfCharacters).random()
