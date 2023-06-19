@@ -2,8 +2,7 @@ package lesson_10
 
 fun main() {
     var winCounter = 0
-    var flag = true
-    while (flag) {
+    do {
         print("ход игрока: ")
         val playerNumbers = diceRoll()
         println(playerNumbers)
@@ -18,8 +17,7 @@ fun main() {
             println("Победило гордое человечество")
             winCounter++
         }
-        flag = roundContinuation(flag, winCounter)
-    }
+    } while (continueRound(winCounter))
 }
 
 fun diceRoll(): Int {
@@ -28,7 +26,7 @@ fun diceRoll(): Int {
     return dice1 + dice2
 }
 
-fun roundContinuation(flag: Boolean, winCounter: Int): Boolean {
+fun continueRound(winCounter: Int): Boolean {
     println("Хотите бросить кости еще раз? Введите Да или Нет")
     val answer = readln().replaceFirstChar { it.uppercase() }
     if (answer == "Да") return true
