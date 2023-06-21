@@ -5,7 +5,7 @@ fun main() {
     println("В рецепте есть базовые ингредиенты: $wokRecipe")
 
     print("Желаете добавить еще?: ")
-    val response = readln().replaceFirstChar { it.lowercase() }
+    val response = readln().lowercase()
 
     if (response == "да") println("Какой ингредиент вы хотите добавить?")
     else return
