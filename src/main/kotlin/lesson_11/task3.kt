@@ -1,14 +1,14 @@
 package lesson_11
 
-class Rooms(
+class Room(
     val name: String,
     val cover: String,
 ) {
-    lateinit var participantsList: List<Participants>
+    var participantsList: List<Participant> = listOf()
 
 }
 
-fun showRooms(roomList: Array<Rooms>) {
+fun showRooms(roomList: Array<Room>) {
     for (i in roomList) {
         println(i.name)
         println(i.cover)
@@ -19,7 +19,7 @@ fun showRooms(roomList: Array<Rooms>) {
     println()
 }
 
-fun showUserList(participantsList: List<Participants>) {
+fun showUserList(participantsList: List<Participant>) {
 
     participantsList.forEach() {
         var microphoneStatus = ""
@@ -33,8 +33,8 @@ fun showUserList(participantsList: List<Participants>) {
     }
 }
 
-class Participants(
-    val nickName: String,
+class Participant(
+    var nickName: String,
     var microphoneStatusCode: Int,
     val avatar: String
 ) {
@@ -44,25 +44,23 @@ class Participants(
 }
 
 fun main() {
-    val user1 = Participants("User1", 1, "Слоник")
-    val user2 = Participants("User2", 2, "Кошечка")
-    val user3 = Participants("User3", 3, "Собачка")
+    val user1 = Participant("User1", 1, "Слоник")
+    val user2 = Participant("User2", 2, "Кошечка")
+    val user3 = Participant("User3", 3, "Собачка")
 
 
-    val communicationRooms = Rooms("communication", "Символ \"облако\"")
+    val communicationRooms = Room("communication", "Символ \"облако\"")
     communicationRooms.participantsList = listOf(user1, user2, user3)
     user1.showUserNickname()
 
-    val user4 = Participants("User4", 1, "Бэтмен")
-    val user5 = Participants("User4", 1, "Человек-Паук")
+    val user4 = Participant("User4", 1, "Бэтмен")
+    val user5 = Participant("User4", 1, "Человек-Паук")
 
-    val gameRooms = Rooms("Games", "Символ \"гемпад\"")
+    val gameRooms = Room("Games", "Символ \"гемпад\"")
     gameRooms.participantsList = listOf(user4, user5)
 
     var roomList = arrayOf(communicationRooms, gameRooms)
     showRooms(roomList)
     user1.showUserNickname()
     user5.showUserNickname()
-
-
 }
