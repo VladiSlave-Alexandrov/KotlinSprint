@@ -1,6 +1,6 @@
 package lesson_12
 
-class Weather() {
+class Weather {
     var daytimeTemperature = 15
     var nightTimeTemperature = 5
     var atmosphericPressure = 722
