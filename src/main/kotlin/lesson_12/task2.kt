@@ -1,22 +1,24 @@
 package lesson_12
 
-class Weatherr() {
-    var daytimeTemperature: Int = 0
-    var nightTimeTemperature: Int = 0
-    var atmosphericPressure: Int = 0
-    var rainPresence = false
+class Weatherr(
+    _daytimeTemperature: Int,
+    _nightTimeTemperature: Int,
+    _atmosphericPressure: Int,
+    _rainPresence: Boolean,
+) {
 
-    constructor(
-        _daytimeTemperature: Int,
-        _nightTimeTemperature: Int,
-        _atmosphericPressure: Int,
-        _rainPresence: Boolean,
-    ) : this() {
+    val daytimeTemperature: Int
+    val nightTimeTemperature: Int
+    val atmosphericPressure: Int
+    val rainPresence: Boolean
+
+    init {
         daytimeTemperature = _daytimeTemperature
         nightTimeTemperature = _nightTimeTemperature
         atmosphericPressure = _atmosphericPressure
         rainPresence = _rainPresence
     }
+
 
     fun outputWeatherData() {
         println(daytimeTemperature)
@@ -27,17 +29,12 @@ class Weatherr() {
 }
 
 fun main() {
-    val day1 = Weatherr()
-    day1.daytimeTemperature = 3
-    day1.nightTimeTemperature = -3
-    day1.atmosphericPressure = 700
+    val day1 = Weatherr(3, -3, 722, false)
     day1.outputWeatherData()
     println()
-
-    val day2 = Weatherr()
-    day2.daytimeTemperature = 13
-    day2.nightTimeTemperature = 7
-    day2.atmosphericPressure = 728
-    day2.rainPresence = true
+    val day2 = Weatherr(15, 5, 724, true)
     day2.outputWeatherData()
+    println()
+    val day3 = Weatherr(5, -1, 728, false)
+    day3.outputWeatherData()
 }
