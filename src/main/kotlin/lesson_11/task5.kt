@@ -23,9 +23,9 @@ class Forum() {
     var messageList: MutableList<String> = mutableListOf()
 
     fun newMessage(usserId: Int, messageText: String) {
-        usserList.elementAt(usserId).login
         val message = "($usserId)${usserList.elementAt(usserId).login}: $messageText"
         messageList.add(message)
+        //printLastMessage()
     }
 
     fun printThread() {
@@ -35,6 +35,16 @@ class Forum() {
             println()
         }
     }
+
+    //var messageId = 0
+    //fun printLastMessage() {
+    //    while (messageId <= messageList.indexOf(messageList.last())) {
+    //        println("Mes-Id:${messageList.indexOf(messageList[messageId])}")
+    //        println(messageList[messageId])
+    //        println()
+    //        messageId++
+    //    }
+    //}
 }
 
 fun main() {
@@ -46,6 +56,7 @@ fun main() {
     forum.newMessage(1, "Здравствуй")
     forum.newMessage(0, "Я фанат DC")
     forum.newMessage(1, "Я фанат Marvel")
-
     forum.printThread()
+
+
 }
