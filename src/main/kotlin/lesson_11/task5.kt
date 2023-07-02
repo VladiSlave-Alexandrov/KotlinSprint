@@ -25,7 +25,6 @@ class Forum() {
     fun newMessage(usserId: Int, messageText: String) {
         val message = "($usserId)${usserList.elementAt(usserId).login}: $messageText"
         messageList.add(message)
-        //printLastMessage()
     }
 
     fun printThread() {
@@ -35,16 +34,6 @@ class Forum() {
             println()
         }
     }
-
-    //var messageId = 0
-    //fun printLastMessage() {
-    //    while (messageId <= messageList.indexOf(messageList.last())) {
-    //        println("Mes-Id:${messageList.indexOf(messageList[messageId])}")
-    //        println(messageList[messageId])
-    //        println()
-    //        messageId++
-    //    }
-    //}
 }
 
 fun main() {
