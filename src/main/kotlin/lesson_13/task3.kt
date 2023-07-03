@@ -1,19 +1,10 @@
 package lesson_13
 
 class Contact1(
-    _name: String?,
-    _contactNumber: String?,
-    _company: String?
+    var company: String? = null ?: " [не указано]",
+    var name: String? = null ?: " [не указано]",
+    var contactNumber: String? = null ?: " [не указано]",
 ) {
-    var company: String?
-    var name: String
-    var contactNumber: String
-
-    init {
-        company = _company ?: " [не указано]"
-        name = _name ?: " [не указано]"
-        contactNumber = _contactNumber ?: " [не указано]"
-    }
 }
 
 fun main() {
