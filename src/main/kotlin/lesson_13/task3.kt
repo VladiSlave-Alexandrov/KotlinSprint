@@ -5,6 +5,10 @@ class Contact1(
     var name: String? = null ?: " [не указано]",
     var contactNumber: String? = null ?: " [не указано]",
 ) {
+    fun displayContactList() {
+        println("Имя: $name \nНомер: $contactNumber \nКомпания: $company")
+        println()
+    }
 }
 
 fun main() {
@@ -22,12 +26,6 @@ fun main() {
     val contact4 = Contact1(null, null, null)
     telephoneDirectory.add(contact4)
 
-    displayContactList(telephoneDirectory)
+    contact1.displayContactList()
 }
 
-fun displayContactList(telephoneDirectory: MutableList<Contact1>) {
-    telephoneDirectory.forEach() {
-        println("Имя: ${it.name} \nНомер: ${it.contactNumber} \nКомпания: ${it.company}")
-        println()
-    }
-}
