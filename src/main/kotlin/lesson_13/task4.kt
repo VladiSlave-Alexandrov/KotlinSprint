@@ -7,15 +7,11 @@ class Contact1(
     _contactNumber: String?,
     _company: String?
 ) {
-    var company: String
-    var name: String
-    var contactNumber: String
+    var company: String? = getValue(_company)
+    var name: String? = getValue(_name)
+    var contactNumber: String? = getValue(_contactNumber)
 
-    init {
-        company = _company ?: " [не указано]"
-        name = _name ?: " [не указано]"
-        contactNumber = _contactNumber ?: " [не указано]"
-    }
+    private fun getValue(str: String?) = if (str.isNullOrEmpty()) null else str
 }
 
 fun displayContactList(telephoneDirectory: MutableList<Contact1>) {
@@ -27,20 +23,17 @@ fun displayContactList(telephoneDirectory: MutableList<Contact1>) {
 
 fun addContact(telephoneDirectory: MutableList<Contact1>): MutableList<Contact1> {
     while (true) {
-        var name: String? = null
-        var company: String? = null
         print("Введите имя контакта: ")
-        name = readlnOrNull()
+        val name = readlnOrNull()
         println()
 
         print("Введите название компании: ")
-        company = readlnOrNull()
+        val company = readlnOrNull()
         println()
 
-        var number: String? = null
         while (true) {
             print("Введите номер телефона: ")
-            number = readlnOrNull()
+            val number = readlnOrNull()
             println()
             if (number == null) {
                 println("Поле обязательно к заполнению")
