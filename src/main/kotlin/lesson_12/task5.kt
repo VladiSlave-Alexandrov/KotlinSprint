@@ -45,19 +45,11 @@ fun collectWeatherData(numberDays: Int): MutableList<Weatherrrrr> {
 }
 
 fun calculateMeanData(days: List<Weatherrrrr>, numberDays: Int) {
-    var meanDaytimeTemperature = 0
-    var meanNighttimeTemperature = 0
-    var numberRainyDays = 0
-    var meanAtmosphericPressure = 0
-    days.forEach() {
-        meanDaytimeTemperature += it.daytimeTemperature
-        meanNighttimeTemperature += it.nightTimeTemperature
-        meanAtmosphericPressure += it.atmosphericPressure
-        if (it.rainPresence == true) numberRainyDays += 1
-    }
-    meanDaytimeTemperature /= numberDays
-    meanNighttimeTemperature /= numberDays
-    meanAtmosphericPressure /= numberDays
+    val meanDaytimeTemperature = days.map { it.daytimeTemperature }.average()
+    val meanNighttimeTemperature = days.map { it.nightTimeTemperature }.average()
+    val numberRainyDays = days.map { it.rainPresence }.filter { it }.size
+    val meanAtmosphericPressure = days.map { it.atmosphericPressure }.average()
+
     println("Средняя дневная температура за $numberDays дней: $meanDaytimeTemperature")
     println("Средняя ночная температура за $numberDays дней: $meanNighttimeTemperature")
     println("Среднее значение атмосферного давления за $numberDays дней: $meanAtmosphericPressure")
