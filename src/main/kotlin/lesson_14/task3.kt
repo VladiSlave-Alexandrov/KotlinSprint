@@ -5,12 +5,7 @@ open class Message(
     val ownerName: String,
 ) {
     open fun printMessage() {
-        println(
-            """
-            Автор: $ownerName
-            $text
-        """.trimIndent()
-        )
+        println("Автор: $ownerName\n$text")
     }
 }
 
@@ -20,8 +15,7 @@ class Commentary(
     val messageInfo: String
 ) : Message(text, ownerName) {
     override fun printMessage() {
-        println()
-        println("[$messageInfo]")
+        println("\n[$messageInfo]")
         super.printMessage()
     }
 }
