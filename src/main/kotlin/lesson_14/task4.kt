@@ -15,7 +15,12 @@ open class Planet(
     val atmosphere: Boolean,
     val water: Boolean,
 ) : SpaceObjects(name, plantability, radiatesLight) {
+    val satelliteList: MutableList<Satellite> = mutableListOf()
 
+    fun printSatelliteInfo() {
+        println("Планета: $name\nЕё спутники:")
+        satelliteList.forEach { print("${it.name} ") }
+    }
 }
 
 class Satellite(
@@ -35,9 +40,7 @@ fun main() {
     val planet1 = Planet("C137", true, false, true, true, true, true)
     val satellite1 = Satellite("C137-01", true, false, false, true, true, true, planet1)
     val satellite2 = Satellite("C137-02", true, false, false, false, false, false, planet1)
-    println(
-        """Планета: ${planet1.name}
-        |Спутники: ${satellite1.name}, ${satellite2.name}
-    """.trimMargin()
-    )
+    planet1.satelliteList.add(satellite1)
+    planet1.satelliteList.add(satellite2)
+    planet1.printSatelliteInfo()
 }
