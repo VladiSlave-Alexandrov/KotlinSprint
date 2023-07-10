@@ -1,6 +1,6 @@
 package lesson_14
 
-open class SpaceObjects(
+open class SpaceObject(
     val name: String,
     val plantability: Boolean,
     val radiatesLight: Boolean,
@@ -14,7 +14,7 @@ open class Planet(
     val habitability: Boolean,
     val atmosphere: Boolean,
     val water: Boolean,
-) : SpaceObjects(name, plantability, radiatesLight) {
+) : SpaceObject(name, plantability, radiatesLight) {
     val satelliteList: MutableList<Satellite> = mutableListOf()
 
     fun printSatelliteInfo() {
