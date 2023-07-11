@@ -1,7 +1,7 @@
 package lesson_15
 
 abstract class Message(val text: String) {
-    open fun sendMessage() {}
+    abstract fun sendMessage()
     fun connectToServer() {
         println("Идёт подключение к серверу подождите")
     }
