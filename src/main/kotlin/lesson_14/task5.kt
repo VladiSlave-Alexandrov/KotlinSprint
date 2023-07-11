@@ -1,30 +1,21 @@
 package lesson_14
 
 import java.lang.Math.sqrt
+import kotlin.math.PI
 
 abstract class Figure(val color: String) {
-    open fun calculateArea(): Double {
-        return 0.0
-    }
+    abstract fun calculateArea(): Double
 
-    open fun calculatePerimeter(): Double {
-        return 0.0
-    }
+    abstract fun calculatePerimeter(): Double
 }
 
 class Circle(
     color: String,
     val radius: Double,
 ) : Figure(color) {
-    override fun calculateArea(): Double {
-        val area: Double = NUMBER_OF_PI * (radius * radius)
-        return area
-    }
+    override fun calculateArea(): Double = PI * (radius * radius)
 
-    override fun calculatePerimeter(): Double {
-        val perimeter = 2 * NUMBER_OF_PI * radius
-        return perimeter
-    }
+    override fun calculatePerimeter(): Double = 2 * PI * radius
 }
 
 class Triangle(
@@ -39,10 +30,7 @@ class Triangle(
         return area
     }
 
-    override fun calculatePerimeter(): Double {
-        val perimeter = sideA + sideB + sideC
-        return perimeter
-    }
+    override fun calculatePerimeter(): Double = sideA + sideB + sideC
 }
 
 class Rectangle(
@@ -50,15 +38,9 @@ class Rectangle(
     val sideA: Double,
     val sideB: Double
 ) : Figure(color) {
-    override fun calculateArea(): Double {
-        val area = sideA * sideB
-        return area
-    }
+    override fun calculateArea(): Double = sideA * sideB
 
-    override fun calculatePerimeter(): Double {
-        val perimeter = (sideA * 2) + (sideB * 2)
-        return perimeter
-    }
+    override fun calculatePerimeter(): Double = (sideA * 2) + (sideB * 2)
 }
 
 fun main() {
@@ -91,5 +73,3 @@ fun perimeterSum(figureList: Array<Figure>) {
     }
     println(String.format("%.1f", perimeterSum))
 }
-
-const val NUMBER_OF_PI = 3.14
