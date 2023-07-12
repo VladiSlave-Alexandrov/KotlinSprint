@@ -16,34 +16,42 @@ interface CargoTransportation {
 
 class Truck(
     val name: String,
-    val numberPasses: Int = 1,
-    val cargoQuantity: Int = 2000
+    val numberPasses: Int,
+    val cargoQuantity: Int
 ) : Movable, TransportationOfPassengers, CargoTransportation {
+    private val maxNumberPasses = 1
+    private val maxCargoQuantity = 2000
     override fun transferPassenger() {
-        println("$name перевозит $numberPasses человека")
+        if (numberPasses <= maxNumberPasses) println("$name перевозит $numberPasses человека")
+        else println("Нарушение норм транспортировки")
     }
 
     override fun transferCargo() {
-        println("$name перевозит $cargoQuantity тонн груза")
+        if (cargoQuantity <= maxCargoQuantity) println("$name перевозит $cargoQuantity тонн груза")
+        else println("Нарушение норм транспортировки")
     }
 }
 
-
 class PassengerCar(
     val name: String,
-    val numberPasses: Int = 3,
+    val numberPasses: Int,
 ) : Movable, TransportationOfPassengers {
+    private val maxNumberPasses = 3
     override fun transferPassenger() {
-        println("$name перевозит $numberPasses человека")
+        if (numberPasses <= maxNumberPasses) println("$name перевозит $numberPasses человека")
+        else println("Нарушение норм транспортировки")
     }
 }
 
 fun main() {
-    val truck = Truck("Биг-бой")
-    val car = PassengerCar("Литл-бой")
+    val truck = Truck("Биг-бой", 1, 2000)
+    val car = PassengerCar("Литл-Бой", 3)
+    val car2 = PassengerCar("Литл-Бой-Младшенький", 2)
     truck.move()
     truck.transferPassenger()
     truck.transferCargo()
     car.move()
     car.transferPassenger()
+    car2.move()
+    car2.transferPassenger()
 }
