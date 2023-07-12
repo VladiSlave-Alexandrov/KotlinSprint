@@ -10,9 +10,11 @@ class User(
         print("Введите пароль: ")
         val strPass = readln()
 
-        if ((strLog == login) && (strPass == password)) println("Неверные данные")
-        else println("Добро пожаловать")
+        if ((strLog == login) && (verificationPass(strPass))) println("Добро пожаловать")
+        else println("Неверные данные")
     }
+
+    private fun verificationPass(strPass: String): Boolean = strPass == password
 }
 
 fun main() {
